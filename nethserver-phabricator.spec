@@ -1,16 +1,13 @@
 Name: nethserver-phabricator
 Summary: NethServer phabricator configuration
-Version: 3.1.1
+Version: 0.0.1
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
 BuildArch: noarch
 URL: %{url_prefix}/%{name}
 
-Requires: net-tools
-# perl-TimeDate is needed for certificate renew
-Requires: nethserver-yum
-Requires: nethserver-lib, perl(NethServer::Database::Hostname)
+Requires: nethserver-httpd,nethserver-mysql,git
 
 BuildRequires: nethserver-devtools
 %description
@@ -30,6 +27,5 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc COPYING
 %doc README.md
-
 
 %changelog
